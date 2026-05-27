@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2, Circle, Rocket, Sparkles } from 'lucide-react'
+import { CheckCircle2, Circle, Rocket } from 'lucide-react'
 
 const milestones = [
   {
@@ -18,27 +18,15 @@ const milestones = [
   },
   {
     period: '2028 — 2030',
-    title: 'MBA Done. Own Business.',
+    title: 'Apply. Build. Lead.',
     status: 'next',
     color: 'blush',
-    tagline: 'Complete MBA. Start something of my own.',
+    tagline: 'MBA is done. Now put it to work.',
     items: [
-      { done: false, text: 'Complete MBA — apply business thinking to real decisions, not just coursework.' },
+      { done: false, text: 'Apply MBA knowledge to real decisions — strategy, people, and business model thinking.' },
       { done: false, text: 'Identify a real problem worth solving at the intersection of tech and people.' },
       { done: false, text: 'Build the network, confidence, and financial foundation to launch a business.' },
       { done: false, text: 'Develop conflict management and stakeholder skills — still my weakest area.' },
-    ],
-  },
-  {
-    period: '2031 and beyond',
-    title: 'Build Something Meaningful',
-    status: 'future',
-    color: 'sage',
-    tagline: 'Lead at the intersection of technology and people.',
-    items: [
-      { done: false, text: 'Run a business focused on technology, learning, or people development.' },
-      { done: false, text: 'Build environments where people can grow and do their best work.' },
-      { done: false, text: "The exact role matters less than the type of impact — that part is clear." },
     ],
   },
 ]
@@ -84,6 +72,20 @@ export default function DevPlan() {
       {/* Blobs */}
       <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-lavender-100/50 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-blush-100/40 blur-3xl pointer-events-none" />
+
+      {/* Ambient chapter watermark */}
+      <div
+        className="absolute left-4 top-8 font-display font-black select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(60px, 14vw, 160px)',
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(139, 92, 246, 0.06)',
+          lineHeight: 1,
+        }}
+        aria-hidden="true"
+      >
+        05
+      </div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
 
@@ -167,6 +169,51 @@ export default function DevPlan() {
             })}
           </div>
         </div>
+
+        {/* ── "Tỉnh táo" photo — a reminder not to take it all too seriously ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-16 flex flex-col md:flex-row items-center gap-8 bg-white/60 backdrop-blur-sm border border-lavender-100 rounded-2xl p-6 md:p-8"
+        >
+          {/* Polaroid */}
+          <div className="shrink-0">
+            <div
+              className="bg-white p-3 pb-8 rounded-lg shadow-md relative"
+              style={{ transform: 'rotate(2deg)', width: 180 }}
+            >
+              <img
+                src="/photos/anh7.jpg"
+                alt="Nam Cat Tien forest"
+                className="w-full rounded"
+                style={{ height: 200, objectFit: 'cover', objectPosition: 'center top' }}
+              />
+              <p className="absolute bottom-1.5 left-0 right-0 text-center text-plum-700/50 text-[9px] italic">
+                Nam Cat Tien, 2025
+              </p>
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="flex flex-col gap-3 text-center md:text-left">
+            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-lavender-500">
+              A note to future me
+            </p>
+            <p className="font-display font-bold text-plum-900 text-xl leading-snug">
+              Stay Clear.{' '}
+              <span className="text-gradient-violet">Keep Moving.</span>
+            </p>
+            <p className="text-plum-700/55 text-sm leading-relaxed font-light max-w-sm">
+              Not every plan goes on schedule. But as long as you know where you are and where you're heading — the rest is just time and steps forward.
+            </p>
+            <p className="text-plum-700/35 text-xs italic">
+              — Written in a forest, wearing the most honest shirt I own
+            </p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   )

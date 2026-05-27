@@ -39,7 +39,7 @@ export default function Navbar() {
             P
           </span>
           <span className="text-plum-800 font-semibold text-sm hidden sm:inline tracking-tight">
-            Building <span className="text-gradient-violet">Bridges</span>
+          Detour <span className="text-gradient-violet">Required</span>
           </span>
         </a>
 

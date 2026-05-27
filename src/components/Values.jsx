@@ -77,6 +77,20 @@ export default function Values() {
       <div className="absolute top-24 left-0 w-80 h-80 rounded-full bg-sage-50/70 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-lavender-100/40 blur-3xl pointer-events-none" />
 
+      {/* Ambient chapter watermark */}
+      <div
+        className="absolute left-4 top-8 font-display font-black select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(60px, 14vw, 160px)',
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(16, 185, 129, 0.07)',
+          lineHeight: 1,
+        }}
+        aria-hidden="true"
+      >
+        03
+      </div>
+
       <div className="max-w-5xl mx-auto px-6 relative z-10">
 
         {/* Header */}

@@ -63,6 +63,20 @@ export default function Gaps() {
       <div className="absolute top-20 right-10 w-80 h-80 rounded-full bg-amber-50/80 blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-0 w-72 h-72 rounded-full bg-rose-50/60 blur-3xl pointer-events-none" />
 
+      {/* Ambient chapter watermark */}
+      <div
+        className="absolute right-4 top-8 font-display font-black select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(60px, 14vw, 160px)',
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(245, 158, 11, 0.07)',
+          lineHeight: 1,
+        }}
+        aria-hidden="true"
+      >
+        04
+      </div>
+
       <div className="max-w-5xl mx-auto px-6 relative z-10">
 
         {/* Header */}

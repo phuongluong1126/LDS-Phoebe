@@ -5,6 +5,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Scroll-snap: each chapter snaps into view like a book page */
+    scroll-snap-type: y mandatory;
   }
   body {
     font-family: 'Inter', system-ui, sans-serif;
@@ -28,6 +30,12 @@
   /* Display heading (serif) */
   .section-title {
     @apply font-display text-4xl md:text-5xl font-bold tracking-tight leading-tight text-plum-900;
+  }
+
+  /* Story chapter snap point — each section snaps into view */
+  .story-chapter {
+    scroll-snap-align: start;
+    min-height: 100vh;
   }
 
   /* Light glass card */
@@ -67,6 +75,15 @@
 ::-webkit-scrollbar-track { background: #f8f3ff; }
 ::-webkit-scrollbar-thumb { background: #bea8ff; border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: #a07ff5; }
+
+/* Story section: fade-up on enter */
+.story-section-enter {
+  animation: storyEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes storyEnter {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
 
 /* Floating sparkle particles */
 @keyframes sparkle {

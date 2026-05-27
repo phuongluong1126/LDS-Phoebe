@@ -8,7 +8,8 @@ const roles = [
     color: 'violet',
     title: 'Frontend Developer',
     type: 'Main career',
-    img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop&q=80',
+    imgPos: 'center center',
+    img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop&q=80',
     description:
       'Where it all started. Software engineering degree, main income, most of my working hours. I enjoy problem-solving, building things that work, and thinking in systems.',
     lesson: 'Structured thinking & independent ownership',
@@ -21,7 +22,8 @@ const roles = [
     color: 'rose',
     title: 'Programming Teacher',
     type: 'Side income → Passion',
-    img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=300&fit=crop&q=80',
+    imgPos: 'center top',
+    img: '/photos/anh2.jpg',
     description:
       'Started at VUS when they launched a digital skills program for children. Needed the extra income — stayed because I genuinely started caring about the students.',
     lesson: 'Empathy & creating conditions for growth',
@@ -34,7 +36,8 @@ const roles = [
     color: 'blush',
     title: 'PM Training at FPT',
     type: 'Career transition',
-    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop&q=80',
+    imgPos: 'center 55%',
+    img: '/photos/anh1.jpg',
     description:
       'A deliberate step toward transitioning from developer to project manager. Currently 50% through — two months left. The goal is clear.',
     lesson: 'Coordination & the bigger picture',
@@ -47,7 +50,8 @@ const roles = [
     color: 'sage',
     title: 'MBA Student',
     type: 'Broadening perspective',
-    img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=300&fit=crop&q=80',
+    imgPos: 'center center',
+    img: '/photos/mba_class.jpg',
     description:
       'About stepping back. Technical work keeps you focused on how. Business thinking forces you to ask why — why this project, for whom, what is the actual value.',
     lesson: 'Business thinking & long-term vision',
@@ -111,6 +115,20 @@ export default function Journey() {
       <div className="absolute top-20 right-0 w-96 h-96 rounded-full bg-blush-100/40 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-lavender-100/40 blur-3xl pointer-events-none" />
 
+      {/* Ambient chapter watermark */}
+      <div
+        className="absolute left-4 top-8 font-display font-black select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(60px, 14vw, 160px)',
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(236, 72, 153, 0.07)',
+          lineHeight: 1,
+        }}
+        aria-hidden="true"
+      >
+        01
+      </div>
+
       <div className="max-w-6xl mx-auto px-6 relative z-10">
 
         {/* Header */}
@@ -149,11 +167,12 @@ export default function Journey() {
                 className={`group card-light overflow-hidden hover:-translate-y-1`}
               >
                 {/* Image */}
-                <div className="relative h-44 overflow-hidden rounded-t-2xl -mx-6 -mt-6 mb-5">
+                <div className="relative h-60 overflow-hidden mb-5">
                   <img
                     src={role.img}
                     alt={role.title}
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-85 group-hover:scale-105 transition-all duration-500"
+                    className="w-full h-full object-cover opacity-80 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
+                    style={{ objectPosition: role.imgPos || 'center center' }}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${c.bg.replace('bg-', 'from-').replace('/80','')}/80 via-transparent to-transparent`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />

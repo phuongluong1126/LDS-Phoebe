@@ -104,6 +104,58 @@ export default function Closing() {
             </div>
           </motion.div>
 
+          {/* ── Gấu Bự — Chief Motivation Officer ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.75, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-12 flex flex-col items-center gap-4"
+          >
+            <div className="flex items-end justify-center gap-5">
+              {/* Polaroid */}
+              <div
+                className="relative bg-white/90 p-2.5 pb-8 rounded shadow-2xl cursor-default select-none"
+                style={{ transform: 'rotate(-3deg)', maxWidth: 190 }}
+              >
+                <img
+                  src="/photos/anh5.jpg"
+                  alt="Gau Bu yawning"
+                  className="w-full rounded"
+                  style={{ height: 150, objectFit: 'cover', objectPosition: 'center 30%' }}
+                />
+                <p className="absolute bottom-1.5 left-0 right-0 text-center text-plum-700/60 text-[9px] italic font-light">
+                  Gau Bu · Chief Motivation Officer
+                </p>
+              </div>
+
+              {/* Speech bubble */}
+              <div className="relative mb-6">
+                <div
+                  className="px-4 py-3 rounded-2xl text-sm text-white/70 leading-relaxed italic max-w-[200px] text-left"
+                  style={{
+                    background: 'rgba(255,255,255,0.07)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                  }}
+                >
+                  "Are you sleepy?<br />Thank you for your<br />effort to read all ^^"
+                  {/* Bubble tail */}
+                  <div
+                    className="absolute -left-2 bottom-4 w-0 h-0"
+                    style={{
+                      borderTop: '8px solid transparent',
+                      borderBottom: '8px solid transparent',
+                      borderRight: '10px solid rgba(255,255,255,0.07)',
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <p className="text-white/20 text-[10px] uppercase tracking-[0.3em]">
+              The one who waited at home through all of this
+            </p>
+          </motion.div>
+
           {/* Back to top */}
           <motion.a
             href="#home"

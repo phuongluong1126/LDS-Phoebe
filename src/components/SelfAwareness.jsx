@@ -66,6 +66,20 @@ export default function SelfAwareness() {
       <div className="absolute top-0 left-1/3 w-[500px] h-[400px] rounded-full bg-lavender-100/50 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-64 h-64 rounded-full bg-blush-100/40 blur-3xl pointer-events-none" />
 
+      {/* Ambient chapter watermark */}
+      <div
+        className="absolute right-4 top-8 font-display font-black select-none pointer-events-none"
+        style={{
+          fontSize: 'clamp(60px, 14vw, 160px)',
+          color: 'transparent',
+          WebkitTextStroke: '1px rgba(139, 92, 246, 0.07)',
+          lineHeight: 1,
+        }}
+        aria-hidden="true"
+      >
+        02
+      </div>
+
       <div className="max-w-5xl mx-auto px-6 relative z-10">
 
         {/* Header */}
@@ -177,6 +191,71 @@ export default function SelfAwareness() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* ── "Beyond the labels" — two personal photos ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mt-12 pt-10 border-t border-lavender-100/80"
+        >
+          <p className="text-center text-[10px] font-bold uppercase tracking-[0.32em] text-lavender-400 mb-8">
+            Beyond the labels
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+
+            {/* anh3 — Sapa trail run */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, rotate: -1 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: -1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-md border border-lavender-100 cursor-default"
+              style={{ transform: 'rotate(-1.5deg)' }}
+            >
+              <div className="overflow-hidden" style={{ height: 200 }}>
+                <img
+                  src="/photos/anh3.jpg"
+                  alt="Vietnam Mountain Marathon - Sapa"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-plum-900 font-semibold text-sm">Trail running · Sapa</p>
+                <p className="text-plum-700/50 text-xs mt-1 leading-relaxed">
+                  "I know discomfort. It doesn't stop me — it just becomes part of the plan."
+                </p>
+              </div>
+            </motion.div>
+
+            {/* anh6 — mountain peak flag */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, rotate: 1 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-md border border-lavender-100 cursor-default"
+              style={{ transform: 'rotate(1.5deg)' }}
+            >
+              <div className="overflow-hidden" style={{ height: 200 }}>
+                <img
+                  src="/photos/anh6.png"
+                  alt="La Ban Peak, Nui Dinh mountain"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-4">
+                <p className="text-plum-900 font-semibold text-sm">La Ban Peak · Nui Dinh</p>
+                <p className="text-plum-700/50 text-xs mt-1 leading-relaxed">
+                  "Self-awareness also means knowing what you're capable of when you choose to push."
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
+        </motion.div>
+
       </div>
     </section>
   )
